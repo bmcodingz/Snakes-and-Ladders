@@ -1,0 +1,173 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(120deg, #e8f4ff, #ffffff);
+}
+
+h1 {
+  margin-top: 10px;
+  color: #333;
+}
+
+#board-container {
+  position: relative;
+  padding: 5px;
+  background: #fefefe;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
+  border: 3px solid #444;
+  position: relative;
+  z-index: 2;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 10px;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+  border: 1px solid #555;
+}
+
+.cell:nth-child(4n+1) {
+  background-color: #ffd6d6;
+}
+
+.cell:nth-child(4n+2) {
+  background-color: #d6ffd6;
+}
+
+.cell:nth-child(4n+3) {
+  background-color: #d6d6ff;
+}
+
+.cell:nth-child(4n+4) {
+  background-color: #fff6d6;
+}
+
+.player {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+
+.p1 {
+  background: red;
+}
+
+.p2 {
+  background: blue;
+}
+
+#snakes-ladders {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 500px;
+  height: 500px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+#snakes-ladders image {
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+button {
+  font-size: 18px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 12px;
+  background-color: #0078ff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #005ecb;
+}
+
+.dice {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin: 0 auto 10px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+#controls {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#status {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  #board {
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+  }
+
+  .cell {
+    width: 30px;
+    height: 30px;
+    font-size: 8px;
+  }
+
+  .player {
+    width: 12px;
+    height: 12px;
+  }
+
+  #snakes-ladders {
+    width: 300px;
+    height: 300px;
+    top: 5px;
+    left: 5px;
+  }
+
+  .dice {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+}
